@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Spam SMS Detector</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='spam-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <style>
+#grad1 {
+    height: 50px;
+    background-image: linear-gradient(to bottom right, red , blue);
+    background: linear-gradient(45deg, #33FF63, #33FF63, #33FF63, #33FF63, #279442, #d7e1ec);
+    background-size: 500% 500%;
+    animation: change-gradient 10s ease-in-out infinite;
+}
+</style>
+</head>
+<body>
+
+        <!-- Website Title -->
+        <div id="grad1" class="container">
+            <h2 class='container-heading'><span>Spam Detector</span> for Short Message Service (SMS)</h2>
+            <div class='description'></div>
+        </div>
+
+        <!-- Text Area -->
+        <div class="ml-container">
+            <form action="{{ url_for('predict') }}" method="POST">
+                <textarea class='message-box' name="message" rows="15" cols="75" placeholder="Enter Your Message Here..." required="Enter the message"></textarea><br/>
+                <input type="submit" class="my-cta-button" value="Predict">
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <div class='footer'>
+            <div class="contact">
+                <a target="_blank" href="https://github.com/SanjayBere"><i class="fab fa-github fa-lg contact-icon"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/sanjay-bere-559b51118/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+            </div>
+            <p class='footer-description'>Made with ❤️ by Sanjay Bere</p>
+        </div>
+
+    </body>
+</html>
